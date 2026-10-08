@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Plan Your Journey | JynxTourX</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+
+        <a href="index.html" class="logo">
+            <span>JX</span>
+
+            <div>
+                <strong>JynxTourX</strong>
+                <small>TRAVEL • EXPLORE • EXPERIENCE</small>
+            </div>
+        </a>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#destinations">Destinations</a>
+            <a href="index.html#services">Services</a>
+            <a href="index.html#about">About</a>
+        </div>
+
+        <a href="booking.html" class="nav-btn">
+            Plan a Journey
+        </a>
+
+    </nav>
+
+
+    <!-- BOOKING PAGE -->
+    <main class="booking-page">
+
+        <div class="booking-intro">
+
+            <span>JYNXTOURX / JOURNEY PLANNER</span>
+
+            <h1>
+                Let's plan your
+                <em>next adventure.</em>
+            </h1>
+
+            <p>
+                Tell us about your trip and we'll get back to you
+                with the right plan for your journey.
+            </p>
+
+        </div>
+
+
+        <!-- FORM -->
+
+        <form class="booking-form" id="bookingForm">
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label>FULL NAME</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Your full name"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label>PHONE NUMBER</label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="08012345678"
+                        required
+                    >
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label>DESTINATION</label>
+
+                    <select id="destination" required>
+
+                        <option value="">
+                            Select destination
+                        </option>
+
+                        <option value="Ibadan">
+                            Ibadan
+                        </option>
+
+                        <option value="Erin Ijesa">
+                            Erin Ijesa
+                        </option>
+
+                        <option value="Ile-Ife">
+                            Ile-Ife
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>TRIP TYPE</label>
+
+                    <select id="tripType" required>
+
+                        <option value="">
+                            Select trip type
+                        </option>
+
+                        <option value="Group Trip">
+                            Group Trip
+                        </option>
+
+                        <option value="Private Getaway">
+                            Private Getaway
+                        </option>
+
+                        <option value="Church / Organization Trip">
+                            Church / Organization Trip
+                        </option>
+
+                        <option value="School Trip">
+                            School Trip
+                        </option>
+
+                        <option value="Special Experience">
+                            Special Experience
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>TRAVEL DATE</label>
+
+                    <input
+                        type="date"
+                        id="travelDate"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>NUMBER OF TRAVELLERS</label>
+
+                    <input
+                        type="number"
+                        id="travellers"
+                        min="1"
+                        placeholder="e.g. 10"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>TRIP DETAILS</label>
+
+                <textarea
+                    id="details"
+                    rows="6"
+                    placeholder="Tell us anything important about your trip..."
+                ></textarea>
+
+            </div>
+
+
+            <button type="submit">
+
+                Send Journey Request
+
+                <span>↗</span>
+
+            </button>
+
+        </form>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-brand">
+
+            <div class="footer-logo">
+                JX
+            </div>
+
+            <div>
+                <strong>JynxTourX</strong>
+
+                <small>
+                    TRAVEL • EXPLORE • EXPERIENCE
+                </small>
+            </div>
+
+        </div>
+
+
+        <p>
+            © 2026 JynxTourX. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- WHATSAPP CONNECTION -->
+
+    <script>
+
+        document
+            .getElementById("bookingForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+
+                const name =
+                    document.getElementById("name").value;
+
+                const phone =
+                    document.getElementById("phone").value;
+
+                const destination =
+                    document.getElementById("destination").value;
+
+                const tripType =
+                    document.getElementById("tripType").value;
+
+                const travelDate =
+                    document.getElementById("travelDate").value;
+
+                const travellers =
+                    document.getElementById("travellers").value;
+
+                const details =
+                    document.getElementById("details").value;
+
+
+                const message =
+                    "Hello JynxTourX!%0A%0A" +
+
+                    "I would like to plan a trip.%0A%0A" +
+
+                    "*FULL NAME:* " +
+                    encodeURIComponent(name) +
+                    "%0A" +
+
+                    "*PHONE:* " +
+                    encodeURIComponent(phone) +
+                    "%0A" +
+
+                    "*DESTINATION:* " +
+                    encodeURIComponent(destination) +
+                    "%0A" +
+
+                    "*TRIP TYPE:* " +
+                    encodeURIComponent(tripType) +
+                    "%0A" +
+
+                    "*TRAVEL DATE:* " +
+                    encodeURIComponent(travelDate) +
+                    "%0A" +
+
+                    "*NUMBER OF TRAVELLERS:* " +
+                    encodeURIComponent(travellers) +
+                    "%0A" +
+
+                    "*TRIP DETAILS:* " +
+                    encodeURIComponent(details);
+
+
+                const whatsappNumber =
+                    "2348050706744";
+
+
+                const whatsappURL =
+                    "https://wa.me/" +
+                    whatsappNumber +
+                    "?text=" +
+                    message;
+
+
+                window.location.href = whatsappURL;
+
+            });
+
+    </script>
+
+</body>
+
+</html>
